@@ -1,0 +1,23 @@
+cmake_minimum_required (VERSION 3.8)
+
+set(TARGET_NAME "main")
+
+set(SOURCES "main.cpp" "main.h" "Console_io.cpp" "libco.cpp" "thread.cpp" "CircleBuf.cpp" "Console_io.h" "libco.h" "Profont6x11.h" "thread.h" "CircleBuf.h" "Console.cpp" "T2Input.cpp" "Console.h" "T2Input.h"
+    "ftpconsole.cpp" "ftpconsole.h" "ftp.cpp" "ftp.h" "ftp_proto.c" "ftp_proto.h" "mre_tcp.cpp" "mre_tcp.h")
+
+add_exec_vxp(${TARGET_NAME}
+    SRCS ${SOURCES}
+    RESOURSES resourses
+    APP_NAME "${APP_NAME}"
+    APPID "${APPID}"
+    BACKGROUND ${BACKGROUND}
+    API "${API}"
+    RAM "${RAM}"
+)
+
+target_include_directories(${TARGET_NAME}
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+)
+
+target_link_libraries(${TARGET_NAME} mreapi)
