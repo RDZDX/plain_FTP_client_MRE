@@ -1,6 +1,6 @@
 # plain_FTP_client_MRE - console ftp client
 
-A small **plain FTP client for the MRE platform** (`ftp.vxp`), aimed at Nokia 225 / Series 30+ phones and other phones that can run `.vxp` applications. It has a console-style UI that is driven from the phone keypad.
+A small **plain FTP client for the MRE platform** (`plain_FTP_client_MRE.vxp`), aimed at Nokia 225 / Series 30+ phones and other phones that can run `.vxp` applications. It has a console-style UI that is driven from the phone keypad.
 
 ## File
 - [plain_FTP_client_MRE.vxp](https://rdzdx.github.io/plain_FTP_client_MRE/plain_FTP_client_MRE.vxp) 
