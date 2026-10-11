@@ -45,5 +45,3 @@ FTP is **not encrypted**. User names, passwords, commands, directory listings an
 - Binary transfers only. No resume, recursive transfers, directory removal (`RMD`), rename, or wildcard transfers.
 - Local file names are ASCII only; remote listings are shown as raw `LIST` output with non-ASCII characters replaced by `?`.
 - The data connection end is detected from the MRE `PIPE_CLOSED` event or the idle timeout.
-- Not tested on real hardware yet.
-
