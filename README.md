@@ -30,16 +30,6 @@ Notes:
 
 FTP is **not encrypted**. User names, passwords, commands, directory listings and file contents all travel in clear text and can be read or changed by anybody on the network path. There is **no FTPS/TLS and no SFTP** support in this version. Use it only on networks and with accounts you trust, and do not reuse important passwords.
 
-## Design (short)
-
-- `main/mre_tcp.*` - thin wrapper over `vm_tcp_connect/read/write/close`. MRE callbacks only receive `(handle, event)`, so a small handle -> connection table (two entries: command and data) routes events to the right connection. All waits use `thread_next()` with timeouts.
-- `main/ftp_proto.*` - pure C protocol helpers (reply/multiline parsing, `PASV` parsing, argument checks, tokenizer, output sanitizing). No MRE dependency, so it can be tested on a PC.
-- `main/ftp.*` - the client: control connection, `PASV` data connection, `LIST`/`RETR`/`STOR` streaming through a 2 KB static buffer, local files through `vm_file_*`.
-- `main/ftpconsole.*` - command line reader and command dispatcher.
-- `main/Console*`, `T2Input*`, `CircleBuf*`, `libco*`, `thread*`, `main.cpp` - console UI and cooperative threads taken from the gpt.vxp project layout.
-
-Timeouts: 20 s for connect, 30 s for a server reply and 30 s of idle time during a data transfer. Command arguments containing control characters (CR/LF) are rejected to prevent command injection. No STL, exceptions, Arduino headers or heap allocation are used by the FTP code.
-
 ## Known limitations
 
 - Plain FTP only (no FTPS/TLS/SFTP), passive mode only, no active mode, no `EPSV`/IPv6.
