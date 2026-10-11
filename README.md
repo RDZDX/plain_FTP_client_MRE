@@ -2,6 +2,15 @@
 
 A small **plain FTP client for the MRE platform** (`ftp.vxp`), aimed at Nokia 225 / Series 30+ phones and other phones that can run `.vxp` applications. It has a console-style UI that is driven from the phone keypad.
 
+## File
+- [plain_FTP_client_MRE.vxp](https://rdzdx.github.io/plain_FTP_client_MRE/plain_FTP_client_MRE.vxp) 
+
+## Nokia Phone Signing
+
+For use on Nokia mobile phones, the application must be signed using the IMSI code of your SIM card.
+
+More information: https://vxpatch.luxferre.top
+
 ## Commands
 
 | Command | Description |
